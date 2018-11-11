@@ -10,3 +10,5 @@ function navBar(){
     }
 }
 
+document.getElementById('results').innerHTML = 
+'<h2>This Is The Live Feed</h2>';

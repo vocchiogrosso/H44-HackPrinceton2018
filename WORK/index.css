@@ -70,7 +70,7 @@
 
     .container {
         border: 1px solid black;
-        height: 70%;
+        height: 60%;
         left:10%;
         position: absolute;
         top:25%;
@@ -81,7 +81,7 @@
         position: absolute;
         top:0%;
         left:0%;
-        width:50%;
+        width:45%;
         height:100%;
     }
 
@@ -89,8 +89,24 @@
         position: absolute;
         top:0%;
         left:50%;
-        width:50%;
+        width:45%;
         height:100%;
+    }
+
+    .buttonA {
+        position: absolute;
+        height: 5%;
+        width:5%;
+        top:80%;
+        left:60%;
+    }
+
+    .buttonB {
+        position: absolute;
+        height: 5%;
+        width:5%;
+        top:80%;
+        left:75%;
     }
 
 #screenSettingsC {
