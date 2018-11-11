@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Cube</title>
+
+    <link rel="Stylesheet" media="screen" type="text/css" href="index.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script></script>
+</head>
+<body>
+    <div class="Screen" id="screenSettingsA">
+        <div class="NavigationBar" id="NavBar">
+            <a href="#" onclick="navBar()">
+                <div id="navButton">
+                </div>
+            </a>
+                <div id="navPanel">
+                    <a href="#screenSettingsA"><h3>Home</h3></a>
+                    <a href="#screenSettingsB"><h3>Demo</h3></a>
+                    <a href="#screenSettingsC"><h3>About</h3></a>
+                    <a href="#screenSettingsD"><h3>More</h3></a>
+                </div>
+        </div>
+    </div>
+    <div class="Screen" id="screenSettingsB">
+        <br>
+        <h1>Try A Demo</h1>
+
+        <!-- A button for taking snaps -->
+        <form>
+            <input type=button value="Take A Snapshot" onClick="take_snapshot()">
+        </form>
+                            
+        <div class="container">
+            
+                <div id="results">Your captured image will appear here...</div>
+
+                <div id="my_camera"></div>
+                
+                <!-- First, include the Webcam.js JavaScript Library -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+                
+                <!-- Configure a few settings and attach camera -->
+                <script language="JavaScript">
+                    Webcam.set({
+                        width: 600,
+                        height: 400,
+                        dest_width: 600,
+                        dest_height: 400,
+                        image_format: 'jpeg',
+                        jpeg_quality: 90
+                    });
+                    Webcam.attach( '#my_camera' );
+                </script>
+                
+                <!-- Code to handle taking the snapshot and displaying it locally -->
+                <script language="JavaScript">
+                    function take_snapshot() {
+                        // take snapshot and get image data
+                        Webcam.snap( function(data_uri) {
+                            // display results in page
+                            document.getElementById('results').innerHTML = 
+                                '<h2>Here is your image:</h2>' + 
+                                '<img src="'+data_uri+'"/>';
+                        } );
+                    }
+                </script>
+
+        </div>
+
+    </div>
+    <div class="Screen" id="screenSettingsC">
+        
+    </div>
+    <div class="Footer" id="screenSettingsD">
+        
+    </div>
+</body>
+</html>
